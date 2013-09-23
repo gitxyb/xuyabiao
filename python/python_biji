@@ -1,0 +1,758 @@
+Python安装windows python包msi （shell环境）
+
+安装windows python（x,y）(记事本式)
+
+
+python是个包；ipython是个增强工具；（可执行系统命令）
+
+chmod +x 文件名 （可以以“./”执行）
+
+
+Error:
+
+	NameError 名字错误
+
+	SyntaxError 语法错误
+
+	ValueError 值错误
+
+	TypeError 类型错误
+	
+	IndexError 索引错误
+
+	AttributeError 属性错误
+
+	IndentationError 缩进空格错误
+
+文件结构：
+
+	import py_compile   (编译*.py文件)
+
+	py_compile.compile（文件名）
+
+	.py (可写、可改) .pyc/.pyo (是编译的，不可改)
+
+变量：
+
+	变量的定义是：字母、数字、下划线
+
+	（不能以数字开头，不能使用关键字）
+
+	变量的返回值（相同变量的值，内存空间是相同的，简单地说是不同变量指的是同一个值）
+
+运算符和表达式：
+
+
+	除法：“/”（地板除法）：“//”
+
+	求余：“%”
+
+	求幂：“**”
+
+	赋值：“=”；“+=”；（z=2 => z=z+1;z+=1）
+
+	返回True或False的数叫“布尔值”
+
+
+逻辑运算符1：
+
+	“and”“or” “not”
+
+Python数据类型：
+
+	数字、字符串、列表、元组、字典
+
+	type(变量)（查看数据类型）
+
+数字：
+
+	整型（int）、长整型（long）、浮点型（float）、复数（complex）；
+
+字符串：（string或str）（有序的数据类型）
+
+	‘’、“”、“““ ”””（docsrting）、（“\”转义字符）（“\n”换行转义字符）（“\t”缩进转义字符）
+
+	（三重引号可保留换行）
+
+	raw_input()(返回字符串)  int（raw_input()）(字符串转化为整型)（数据类型的转化）
+
+	(“+”在字符串中做拼接)
+
+	None表示“空”。
+
+元组：（有序的数据类型）（tuple）
+
+	t = （123，）
+
+	t = ('tom','boy',20) = name,gender,age
+
+	t [0] = 'tom'; t[1] = 'boy' ;t[2] = 20;
+
+列表：（有序的数据类型）[list]
+
+	（值是可变的、可改的、可删、可查、可增、弹出；）
+
+	列表变量.append()(增加数据)
+
+	del(列表变量[索引号])(删除数据)(python自带的)
+
+	列表变量.remove(对象)（移除）（列表的一个内置方法）
+
+（字符串、列表、元祖 都成为序列，特点：1、通过索引取值；2、可做切片；）
+
+对象与类的快速入门：
+	
+	对象是具体的实例；类别是抽象的（如：列表、元祖等）；
+
+	查看数据类型怎么用：help(list)、help(string)、help(tuple)等；
+
+
+切片：[起始值:结束值:步长值]
+
+	[索引起始点:索引结束点]（取得值不包括结束点）
+
+	len（变量）（快速获取字符串长度）
+	
+	变量[负索引] （从后往前取）
+
+	（步长值加符号就表示方向）
+
+字典：（dic）(除了列表之外最灵活的数据类型)（无序的）（有映射关系）
+
+	增加：
+
+	修改：
+
+	删除：del(字典)
+
+	弹出：pop
+
+	取值：keys、values、items（返回所有值）、get		
+
+
+序列：
+
+	1、连接操作符:"+"；2、重复操作符：“*”；3、判断值是否在序列中：“in”“not in”；
+
+Python流程控制：
+
+	if语句：if expression（表达式）：
+			statement
+		True：所有非空值
+
+		False：0、None、空的量等不打印；
+
+		（判断bool值，bool值包括True和False）
+
+	if else：
+		x = raw_input('input yes or no')
+		if x == "yes":
+			print 'ok'
+		else:
+			print 'wrong'
+	elif:(或者)
+		if expression：
+			statement
+		   elif:
+			statement
+		   else:
+			ststement
+
+	循环：
+		for循环；(迭代变量的特点是依次取值)
+			for 变量 in 序列：
+				statement
+
+		for i in 'abc':		for i in 'abc':
+			print i			print 'hello world'
+		a			hello world
+		b			hello world
+		c			hello world
+
+		range迭代变量
+
+
+		xrange 生成器（generator）
+
+	循环控制：
+		break 结束循环
+		
+		continue 跳过循环
+
+		pass 占位
+		
+time(模块)：
+	time.sleep(时间)睡眠时间
+
+	time.strftime("%Y-%m-%d  %H:%M:%S")获取当前时间
+
+	time.time()时间戳
+
+遍历：（普遍经历一次）
+
+	例：从列表中取俩值
+	
+		l = ['a','b','c','d','e']
+
+		for i in range(5-1):
+			print l[i],l[i+1]
+
+		a,b
+		b,c
+		c,d
+		d,e
+
+列表表达式：略。
+
+随机事件： import random
+
+	   random.randint()	
+
+函数：
+
+	定义函数：def 函数名（参数）：
+
+	参数：形参和实参
+
+	格式化字符：%d格式化整数；%s格式化字符串
+	
+	例：def f(x,y):
+		
+		print "树上有 %s 猴子 %s" % （x,y）
+
+	     f(123,'tree')
+
+	(当有默认参数时一定是从右向左开始设置的例：def f(x=0,y)是错的）
+
+	1、全局变量：函数内部可直接调用全局变量，但不可改变其值；
+
+	2、局部变量
+
+	3、强制声明全局变量，对其进行修改，改变全局变量的值：函数内部用global + 全局变量
+
+	函数的返回值：
+
+		return：（执行它，相当于函数就停止了）
+		
+向函数传送元祖、字典：
+	
+	例：t = (1,2)
+
+	    d = {'x':1,'y':2}
+
+	    def f(x,y):
+		
+		print x,y
+
+	    f(*t)
+		
+	    f(**d)
+
+	    def f(x,y,*args,**kw):
+	
+		print x,y,args,kw
+
+	    f(1,2,3,4,5,6,z=8)	
+
+python 可以通过字典实现switch语句的功能：
+
+	 略。
+
+常用的函数：
+	
+	strip()把字符串中前后的特殊字符去掉，可以理解为把它们替换为None 
+
+	len()
+
+	divmod()商求余
+
+	pow()指数运算	
+
+	round（）四舍五入
+
+	callable()判断对象可否被调用
+
+	isinstance()判断对象是否某个类的对象 例：isinstance（23，int）
+
+	cmp()
+
+	range()
+
+	xrange()
+
+	type（）
+
+	hex()八进制
+
+	oct()十六进制
+
+	chr(）通过ascii码将数字转换成字母（65~90：A~Z , 97~122:a~z）
+
+	ord() 将字母转换到数字
+
+	str:
+
+		S.capitalize()(字符串首字母大写)
+		S.replace(‘old’,'new')(替换，改变值)
+		S.split('以什么东西进行分割')
+		以什么东西分割.join(S)
+		
+		string:	（导入的模块）
+			string.capitalize('字符串')(字符串首字母大写)
+			string.replace(s(字符串),‘old’,'new')(替换，改变值)
+			string.split('以什么东西进行分割')
+			string.join(l,'.')(将列表转为字符串)
+
+	list:
+
+		L.index()查找索引
+		L.sort()排序（作用于原列表）
+
+	序列函数：
+		
+		zip（）（并行遍历）
+			例：
+				l1 = ['1','2','3']
+				l2 = ['name','age','male']
+				zip(l1,l2)
+				[('1','name'),('2','age'),('3','male')]
+			for x,y in zip(l1,l2)
+				print x ,">>>", y
+
+			1 >>> name 2 >>> age 3 >>> male
+		map()(并行遍历可做运算)（最大匹配）
+
+			map(None,l1,l2)
+			例：
+				l3 = [1,2,3]
+				l4 = [3,4,5]
+				def add():
+					return x+y
+				map(add,l3,l5)
+		filter()(过滤)
+
+			filter(函数，列表)
+
+			例：
+				l = [1,2,3,4,5,6,7,8,89]
+				def fun(x):
+					if x > 7:
+						return True
+				filter(fun,l)
+		reduce()(阶乘)
+			例：
+				def r(x,y):
+					return x*y
+				reduce(r,range(1,6))
+
+lambda匿名函数：(只用一次)
+	
+	例：def f(x,y):                                   lambda x,y:x+y
+		return x+y               =====   
+
+#############################################################################
+import time                                                                 #
+                                                                            #
+time.ctime()(当前时间)                                                      #
+time.time()(时间搓饵)                                                       #
+time.strftime("%Y-%m-%d %H %M %S")                                          #
+#############################################################################
+   
+
+Python面向对象：
+
+	面向对象编程：
+			C++\JAVA\Python等
+
+	类和对象的概念：
+			类是事物的抽象描述；
+
+			对象是类的实例；
+
+	类是要把变量与函数组合一起的； 
+
+	封装：
+			把变量和函数组合一起的名称；
+
+	成员变量：属性
+
+	成员函数：方法
+
+	类的属性：
+
+			公有属性：略。
+			
+			私有属性：“__双下划线”；（只能在类的内部使用）
+
+			内置属性：__dict__是（内置的属性，也就是对象属性）；
+
+			（类属性）（对象属性）
+	类的方法：
+
+			公有方法：略。（公有方法加classmethod就成类方法）
+
+			私有方法：__双下划线();(也是只能在类中使用)
+
+			内置方法：__init__()（构造函数）； （析构函数）__del__(self);__add__（）(魔术方法)；__new__()(单例模式)
+
+			（类方法）（静态方法（静态方法不用加“self”））
+
+			装饰器：@静态方法（调用静态方法时，不用考虑名字）（调用方便，但占内存大）；@类方法（调用类方法时，不用考虑名字）（调用不便，占内存小）；
+
+			内部类：
+
+				略。
+
+			动态方法：
+
+				如果想让类中的对象调用类外的函数，将其变成方法，只要用类名去调用这个函数如：RenLei.fun = f()---》ming.fun()
+
+	继承：
+
+			父类与子类：(重载)（私有方法与私有属性是继承不来的）（父类与子类属性重复，显示子类的）
+
+				class Father(object):
+					pass
+				class Son(Father):
+					pass
+
+	多态：
+
+			同一函数在不同类中，呈现不同形式；
+
+import 模块
+
+	unittest测试模块
+
+		TestCase
+
+		assertEqual
+		
+正则表达式：
+
+		re模块；
+
+			re.findall(查找)
+			re.compile（编译正则表达式）
+			re.match(只有开头有匹配的对象)
+			re.search(有就可以)
+
+			匹配的对象.group()		
+	
+		字符的匹配：
+
+			普通字符：字母、数字；如：“python”
+
+			元字符：“.”（代表一个字符）、“ ^”、“ $”、“*”、“+”、“?”、“{}”、“[]”、“ \”、“ |”、“ ()”(分组)
+
+				[a-z] 表示从a-z的随便一个字母                       “^hello” 表示以hello开头的
+
+				[^a-d] 表示不包含a-d的字母			    “hello$” 表示以hello结尾的
+
+				[Pp]  表示p的大小写都可
+
+				()	匹配的基础上，进行二次匹配
+
+				[]
+					– 常用来指定一个字符集:[abc]; [a-z]
+					– 元字符在字符集中不起作用:[akm$]
+					– 补集匹配不在区间范围内的字符:[^5]
+
+				^
+					– 匹配行首。除非设置 MULTILINE 标志,它只是匹配字符串的开
+					始。在 MULTILINE 模式里,它也可以直接匹配字符串中的每个换行。
+
+
+				$
+					– 匹配行尾,行尾被定义为要么是字符串尾,要么是一个换行字符后面的任何位置。
+
+				\
+					– 反斜杠后面可以加不同的字符以表示不同特殊意义
+					– 也可以用于取消所有的元字符: \[ 或 \\
+					\d 匹配任何十进制数;它相当于类 [0-9]。
+					\D 匹配任何非数字字符;它相当于类 [^0-9]。
+					\s 匹配任何空白字符;它相当于类 [ \t\n\r\f\v]。
+					\S 匹配任何非空白字符;它相当于类 [^ \t\n\r\f\v]。
+					\w 匹配任何字母数字字符;它相当于类 [a-zA-Z0-9_]。
+					\W 匹配任何非字母数字字符;它相当于类 [^a-zA-Z0-9_]。
+
+				*
+					– 指定前一个字符可以被匹配零次或更多次,而不是只有一次。匹配引擎会试着重复尽可能多的次数(不超过整数界定范围,20亿)
+					– a[bcd]*b-- "abcbd"
+
+				+
+					– 表示匹配一或更多次。
+					– 注意 * 和 + 之间的不同;* 匹配零或更多次,所以可以根本就不出现,而 + 则要求至少出现一次
+
+				?
+					– 匹配一次或零次;你可以认为它用于标识某事物是可选的
+
+
+				{m,n}
+					– 其中 m 和 n 是十进制整数。该限定符的意思是至少有 m 个重复,至多到 n 个重复。 a/{1,3}b
+					– 忽略 m 会认为下边界是 0,而忽略 n 的结果将是上边界为无穷大(实际上是20亿）
+					– {0,} 等同于 *,{1,} 等同于 +,而{0,1}则与 ? 相同。如果可以的话,最好使用 *,+,或?
+
+				re.I;re.S;re.M（多行匹配，影响“^”和“$”）;re.X(忽略特殊字符)
+
+
+Python  文件的读写：
+
+			open  or  file
+
+				open(文件地址，方式)
+
+					r 只读		r+ 读写（替换原文件的一些内容）
+
+					w 重写		w+ 读写（新文件）
+
+					a （写的方式，但保留原文件内容） a+（读写）
+
+					b	
+
+					U
+				
+				write（"写的内容"）
+
+				read（写几，读到几）（从第一个读到最后一个）*指针* readline（写几，读到几个字符）（只读取一行） readlines（）（把所有元素都读出来，但把每一行以列表的形式返回）
+				
+					（seek（移动多少，指针的位置））0开头；1当前位置；2是结尾
+	
+				close()
+
+				文件的遍历：
+
+					for i in open(文件地址，方式)：
+
+						略
+
+Python 目录：os
+
+			os.remove()(删除文件)
+			
+			makedirs()(建立多级目录)
+
+			removedirs(删除多级目录)
+
+			listdir()(列出当前目录列表)
+
+			chdir()(切换路径)
+
+			getcwd()(显示当前绝对路径)
+
+			os.path.isdir()(判断是不是目录)
+
+			os.path.join(path,filename)（做目录与文件的连接，显示出整个儿路径）
+
+			os.walk()(已生成器的形式显示路径)
+
+Python的异常处理：
+
+			try:		（捕获异常）
+				open()
+
+			excpet  IOError/NameError/等  ,msg:	（异常处理）
+		
+				print "想说的东西"/pass
+			
+			finally:	(不管出不出异常，都会继续进行)
+
+				print“最后执行”
+
+			raise(抛出异常)
+
+			* with     as *	
+
+			自定义异常：
+				
+					def deco(func):
+      						def _deco(x,y):
+           						print "before a()"
+          						func(x,y)
+           						print "after a()"
+           						return func(x,y)
+       					return _deco
+   
+  					#@deco
+  					def a(x,y):
+      						print "I am function"
+      						return x+y
+  					print a(1,2)
+  					a = deco(a)
+ 					print a(1,2)
+
+多线程：
+
+		程序：是为实现特定目标或解决特定问题，用计算机语言编写命令序列的集合。（静态的）
+
+		进程：（动态的）（基本分配单元）或（执行单元）
+
+		程序有多个进程，每个进程只对应一个程序。
+
+		线程：是进程的某一个单一顺序的控制流。
+
+		一个程序中，有多个线程（在单个程序中同时运行多个线程完成不同工作。）
+
+import thread模块：
+		
+		thread.start_new_thread(函数,参数)
+		
+		thread.allocate_lock(生成锁的对象)
+
+		acquire（）（加锁）
+
+		release（）（释放锁）
+
+import threading模块：
+
+		threading.Thread(target=  ,args=  )
+
+		start()  join()		
+
+		run()		
+
+
+Python和网络编程：
+
+
+		OSI网络模型：应用层（应用软件等）、传输层、互联网层、网络接口层（数据链层和物理层）；
+
+		Socket编程：
+
+				描述IP与端口；
+
+import socket
+
+		bind()	绑定端口、ip
+
+		listen()  监听
+	
+		accept()	等待连接请求（连接完后，就结束了。）
+
+		send()发送
+
+		recv()接收
+
+PIL：（Python的图像处理）
+
+		略
+
+GUI程序设计：
+
+		wxpython
+
+
+LAMP应用：
+
+		Mysql:
+
+库的操作：
+			mysql -uroot -p  (给数据库设置密码)
+
+			mysql -uroot -h +ip(远程连接到别人的数据库)
+
+			show databases;	（展示库）
+
+			create database 库名；or create database 库名 default charset utf8;(创建库或者创建可以输入中文的库)
+
+			show create database 库名；（查看库的创建过程）
+
+			drop database 库名：	（删除库）
+
+			drop table 表名		（删除表）
+
+			use 库名；	（使用库）
+
+表的操作：
+
+			show tables;	（展示表）
+
+			desc 表名；（查看表的结构）
+
+	字段的约束条件：
+
+			primary key(主键约束，不唯一)
+
+			auto_increment (自增长)
+
+			unsigned (无符号)
+
+	字段的操作：
+
+			alter table 表名 add 字段	（增加字段）
+
+			alter table 表名 modify 字段		（修改字段）
+
+	表的操作语言：
+
+			insert into 表名 (可以指定添加想添加数据的字段) values ();	（插值）
+
+			delete from 表名 （条件子句）where ……	(删除)
+
+			select * from 表名 （查询表的所有字段的数据）
+
+			update 表名 set 字段=修改内容 where 字段名 = 内容（条件子句） 		(修改数据)
+
+		起别名：
+			select name as 别名 from 表名
+
+		有范围的查找：
+
+			select * from 表名 where ……（查找空的null用“is”）
+
+		模糊查询：
+
+			select * from 表名 where 字段 like "value_" 或者 "value%"（"_"表示一个字符，“%”表示多个字符）
+
+			mysqldump  库名 > 库名.sql (备份数据库)
+
+			mysql -uroot 库名 <  库名.sql (导入备份)
+
+import MySQLdb:
+		
+		a = MySQL.connect()	建立连接
+
+		a . select_db('库名') 	指定库
+
+		b = a . cursor()	建立游标
+
+		b.execute('','')	执行sql语句
+
+		b.executemany('','')	执行sql语句，支持多条数据操作
+
+		b.fetchone('')		获取单条数据
+
+		b.fetchmany('')		获取多条数据
+
+		a.commit()	提交信息给数据库
+
+		b.close()	关闭游标
+
+		a.close()	关闭程序
+
+自己定义生成器：
+
+		yield （也表返回）
+
+深拷贝、浅拷贝：
+
+
+		import copy
+
+		copy.copy()(浅拷贝)
+
+		copy.deepcopy()(深拷贝)
+
+数据库的表间关系：
+
+		多表查询：
+
+			engine = innoDB(外键约束，存储引擎)
+
+			例：	create table info(id int,name varchar(20),age varint,primary key(id))engine = innoDB;
+
+				create table chengji(id int,sid int,yuwen int,shuxue int,primary key(id),foreign key(sid) references info(id))engine = innoDB;
+
+				注：foreign key（sid）（与主表的id进行关联）
+
+				    references info(id) (与主表id进行匹配)
